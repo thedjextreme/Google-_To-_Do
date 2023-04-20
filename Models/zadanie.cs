@@ -11,6 +11,9 @@ namespace Google_To_Do.Models
         [Key]
         public int Id { get; set; }
 
+        //public string LoginId { get; set; }
+        //public string Pasword { get; set; }
+
         public string TaskName { get; set; }
 
         public string description { get; set; }
@@ -25,6 +28,7 @@ namespace Google_To_Do.Models
         [DisplayFormat(DataFormatString = "{YYYY-MM-DD HH:mm}"/*, ApplyFormatInEditMode = true*/)]
         public DateTime? StartDate { get; set; }
         public DateTime? EndDate { get; set; }
-
     }
+
+
 }

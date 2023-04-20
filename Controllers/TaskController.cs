@@ -1,6 +1,7 @@
 ﻿using Google_To_Do.Data;
 using Google_To_Do.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,8 +23,15 @@ namespace Google_To_Do.Controllers
 
         public IActionResult Index()
         {
-            IEnumerable<zadanie> objList = _db.zadanie;
-            return View(objList);
+            // ViewBag.AssignmentName = TaskName;
+            //ViewBag.PrioritySelectList = new SelectList(_db.zadanie, "Id", "Name", null);
+
+            //IEnumerable<zadanie> objList = _db.zadanie;
+            //return View(objList);
+
+            var work = _db.zadanie.Where(x => x.IsActive == true).ToList();
+
+            return View(work);
         }
         //get - create
         public IActionResult Create()
@@ -71,6 +79,8 @@ namespace Google_To_Do.Controllers
         //GET - DELETE
         public IActionResult Delete(int? id)
         {
+            //ViewData["TaskName"] = new SelectList(_db.zadanie, "Id", "TaskName");
+
             if (id == null || id == 0)
             {
                 return NotFound();
@@ -89,15 +99,28 @@ namespace Google_To_Do.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult DeletePost(int? id)
         {
-            var obj = _db.zadanie.Find(id);
-            if (obj == null)
-            {
-                return NotFound();
-            }
-            _db.zadanie.Remove(obj);
-            _db.SaveChanges();
-            return RedirectToAction("Index");
 
+            var employee = _db.zadanie.FirstOrDefault(x => x.Id == id);
+            _db.zadanie.Remove(employee);
+            _db.SaveChanges();
+
+            return RedirectToAction(nameof(Index));
+
+
+            //var obj = _db.zadanie.Find(id);
+            /// ViewData["TaskName"] = new SelectList(_db.zadanie, "Id", "TaskName");
+
+
+            // obj.EndDate = DateTime.Now;
+            // if (obj == null)
+            // {
+            //     return NotFound();
+            //}
+            //obj.IsActive = false;
+
+            //_db.zadanie.Update(obj);
+            //_db.SaveChanges();
+            //return RedirectToAction("Index");
 
         }
     }
