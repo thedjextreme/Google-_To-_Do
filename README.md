@@ -1,4 +1,4 @@
- GoogleTasks- (Google to do) Web App
+ GoogleTasks-   (Google to do) Web App
 ZAŁOŻENIA:
 Na pierwszej stronie, lista zadań do wykonania z kategoriami:  
 a) data  
