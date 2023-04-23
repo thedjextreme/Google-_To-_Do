@@ -18,7 +18,7 @@ namespace apliakcjaZadania.Controllers
         public IActionResult Index()
         {
 
-            var deletedRecords = _context.zadanie.Where(x => x.IsActive == true).ToList();
+            var deletedRecords = _context.zadanie.Where(x => x.IsActive == false).ToList();
             return View(deletedRecords);
 
 
