@@ -28,6 +28,15 @@ namespace Google_To_Do.Models
         [DisplayFormat(DataFormatString = "{YYYY-MM-DD HH:mm}"/*, ApplyFormatInEditMode = true*/)]
         public DateTime? StartDate { get; set; }
         public DateTime? EndDate { get; set; }
+
+
+        //logowanie
+        //public int Idl { get; set; }
+        //public string LoginId { get; set; }
+        //public string Password { get; set; }
+        //public string EmpoyeeName { get; set; }
+        //public string LoginId { get; set; }
+        //public string Pasword { get; set; }
     }
 
 
