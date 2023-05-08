@@ -101,12 +101,18 @@ namespace Google_To_Do.Controllers
         {
 
             var employee = _db.zadanie.FirstOrDefault(x => x.Id == id);
-            var v = employee.IsActive == false;
-            _db.zadanie.Update(employee);
-            _db.zadanie.Remove(employee);
-            _db.SaveChanges();
+            //var v = employee.IsActive == false;
+            //_db.zadanie.Update(employee);
+            //_db.zadanie.Remove(employee);
+           // _db.SaveChanges();
 
+            employee.IsActive = false;
+            _db.zadanie.Update(employee);
+            //await _db.SaveChangesAsync();
+            _db.SaveChanges();
             return RedirectToAction(nameof(Index));
+
+            //return RedirectToAction(nameof(Index));
 
 
             //var obj = _db.zadanie.Find(id);
