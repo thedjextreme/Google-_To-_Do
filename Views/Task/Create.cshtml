@@ -27,12 +27,14 @@
                         <span asp-validation-for="description" class="text-danger"></span>
                     </div>
                     <div class="col-4">
-                        <label asp-for="Category">Opis Zadania</label>
+                        <label asp-for="Category" class="control-label"></label>
+                        <select asp-for="Category">
+                            <option>---wybierz---</option>
+                        </select>
                     </div>
-                    <div class="col-8">
-                        <input asp-for="Category" class="form-control" />
-                        <span asp-validation-for="Category" class="text-danger"></span>
-                    </div>
+
+                    <hr />
+
 
                     <div class="col-4">
                         <label asp-for="priority">Priorytet</label>
