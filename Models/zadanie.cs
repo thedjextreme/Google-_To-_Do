@@ -15,6 +15,7 @@ namespace Google_To_Do.Models
         //public string Pasword { get; set; }
 
         public string TaskName { get; set; }
+        public string Category { get; set; }
 
         public string description { get; set; }
 

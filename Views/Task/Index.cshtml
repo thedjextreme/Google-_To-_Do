@@ -9,7 +9,7 @@
         </div>
         <div class="col-6 text-right">
             <a asp-controller="Task" asp-action="Create" class="btn btn-primary">
-                Utworz Kategorie
+                Utworz zadanie
             </a>
 
         </div>
@@ -27,10 +27,13 @@
                 <tr>
 
                     <th>
-                        Nazwa Kategorii
+                        Zadanie
                     </th>
                     <th>
-                        Opis Zadania
+                        Kategoria
+                    </th>
+                    <th>
+                        Opis
                     </th>
                     <th>
                         Piorytet
@@ -46,6 +49,8 @@
                 {
                 <tr>
                     <td width="50%">@obj.TaskName</td>
+                    <td width="70%">@obj.Category</td>
+
                     <td width="70%">@obj.description</td>
                     <td width="50%">@obj.priority</td>
                     <td width="55%">@obj.StartDate</td>
