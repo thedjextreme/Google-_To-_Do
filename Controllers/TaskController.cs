@@ -126,7 +126,9 @@ namespace Google_To_Do.Controllers
            // _db.SaveChanges();
 
             employee.IsActive = false;
+            employee.EndDate = DateTime.Now;
             _db.zadanie.Update(employee);
+
             //await _db.SaveChangesAsync();
             _db.SaveChanges();
             return RedirectToAction(nameof(Index));
